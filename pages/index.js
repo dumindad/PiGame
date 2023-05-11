@@ -28,11 +28,16 @@ export default function Home() {
   const { data, mutate } = useSWR("scores", fetcher);
   const [name, setName] = useState("");
   const [value, setValue] = useState("");
-
+  
+  const textContent = " Who holds the current world record for reciting pi?
+In 1981, an Indian man named Rajan Mahadevan accurately recited 31,811 digits of pi from memory. In 1989, Japan's Hideaki Tomoyori recited 40,000 digits. The current Guinness World Record is held by Lu Chao of China, who, in 2005, recited 67,890 digits of pi."
   return <View style={styles.container}>
     <Text style={styles.heading}>PI Digits - Game</Text>
-    <Text style={styles.text}>Who holds the current world record for reciting pi?
-In 1981, an Indian man named Rajan Mahadevan accurately recited 31,811 digits of pi from memory. In 1989, Japan's Hideaki Tomoyori recited 40,000 digits. The current Guinness World Record is held by Lu Chao of China, who, in 2005, recited 67,890 digits of pi.</Text>
+    <Text style={styles.text}>
+      {textContent}
+//       Who holds the current world record for reciting pi?
+// In 1981, an Indian man named Rajan Mahadevan accurately recited 31,811 digits of pi from memory. In 1989, Japan's Hideaki Tomoyori recited 40,000 digits. The current Guinness World Record is held by Lu Chao of China, who, in 2005, recited 67,890 digits of pi.
+      </Text>
 
     <TextInput
       value={name} placeholder="Enter Player Name" onChangeText={(text) => setName(text)}
